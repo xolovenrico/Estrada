@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Shopping Cart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Your Shopping Cart</h1>
+    </header>
+    <main>
+        <ul id="cart-items">
+            <!-- Items will be dynamically inserted here -->
+        </ul>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            let cartList = document.getElementById('cart-items');
+
+            cartItems.forEach(item => {
+                let listItem = document.createElement('li');
+                listItem.textContent = `${item.name} - Quantity: ${item.quantity}`;
+                cartList.appendChild(listItem);
+            });
+        });
+    </script>
+</body>
+</html>

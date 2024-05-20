@@ -1,162 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hot Kicks - Index</title>
-    <style>
-        body {
-            background-color: #FFD1DC;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        
-        .header-content {
-            text-align: center;
-        }
-        
-        header img {
-            display: block;
-            margin: 0 auto;
-        }
-        
-        hr {
-            border: none;
-            height: 3px;
-            width: 34%;
-            background-color: black;
-            margin: 20px auto;
-        }
-        
-        nav {
-            margin: 20px;
-        }
-        
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: black;
-        }
-        
-        .container {
-            text-align: center;
-            margin: 20px auto;
-            width: 80%;
-        }
-        
-        table {
-            margin: 0 auto;
-            width: 100%;
-            border-collapse: collapse;
-            border: 1px solid black; /* Add border to the table */
-        }
-        
-        td {
-            padding: 10px;
-            text-align: center;
-            border: 1px solid black; /* Add border to cells */
-        }
-        
-        .video-container {
-            text-align: center;
-            margin: 20px auto;
-        }
-        
-        .responsive-iframe {
-            width: 100%;
-            max-width: 560px; /* Adjust max-width as needed */
-            height: auto;
-        }
-        
-        form {
-            display: inline-block;
-            text-align: left;
-            margin: 20px auto;
-        }
-        
-        label, input, textarea {
-            display: block;
-            margin: 10px 0;
-        }
-        
-        input[type="submit"] {
-            display: block;
-            margin: 20px auto;
-        }
-    </style>
+    <title>Hot Kickz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Danfo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
-
 <body>
 
     <header>
-        <div class="header-content">
-            <h1>Hot Kicks</h1>
-            <img src="C:/Users/strdm/Downloads/ESTRADA/Images/shoelogo.png" width="100" height="100" alt="Shoe Logo">
+        <div class="header-container">
+            <div class="header-content">
+                <img src="C:/Users/strdm/Downloads/ESTRADA/Images/shoelogo.png" alt="Logo" class="logo">
+                <h1 class="title">Hot Kickz</h1>
+            </div>
         </div>
     </header>
 
-    <hr>
-
     <nav>
-        <a href="file:///C:/Users/strdm/Downloads/ESTRADA/Home.html">Home</a> |
-        <a href="file:///C:/Users/strdm/Downloads/ESTRADA/Products.html">Products</a> |
-        <a href="file:///C:/Users/strdm/Downloads/ESTRADA/AboutUs.html">About Us</a> |
-        <a href="file:///C:/Users/strdm/Downloads/ESTRADA/ContactUs.html">Contact Us</a>
+        <ul>
+            <li><a href="file:///C:/Users/strdm/Downloads/ESTRADA/Home.html">Home</a></li>
+            <li><a href="file:///C:/Users/strdm/Downloads/ESTRADA/Products.html">Products</a></li>
+			<button id="cart-button">🛒</button>
+            <li><a href="file:///C:/Users/strdm/Downloads/ESTRADA/AboutUs.html">About Us</a></li>
+            <li><a href="file:///C:/Users/strdm/Downloads/ESTRADA/ContactUs.html">Contact Us</a></li>
+        </ul>
     </nav>
 
-    <div class="container">
+    <section>
         <h1>Featured Kicks</h1>
-        <table>
+        <table border="1">
             <tr>
-                <td><img src="C:/Users/strdm/Downloads/ESTRADA/Images/adcampusblack.jpeg" alt="Adidas Black" width="150" height="150"></td>
+                <td><img src="C:/Users/strdm/Downloads/ESTRADA/Images/blackadi00s.png" alt="Adidas Black" width="150" height="150"></td>
                 <td>adidas Campus 00s Shoes (Black)</td>
-                <td>| Lace closure, leather upper, iconic leather shoes, rubber outsole |</td>
+                <td>Lace closure, leather upper, iconic leather shoes, rubber outsole</td>
                 <td>P5,000</td>
                 <td>
-                    <label for="adcampusblack-quantity">Quantity:</label>
-                    <input type="number" id="adcampusblack-quantity" name="adcampusblack-quantity" min="1" value="1">
+                    <label for="quantity-1">Quantity:</label>
+                    <input type="number" id="quantity-1" name="quantity-1" min="1" value="1">
                 </td>
-                <td><button>Add To Cart</button></td>
+                <td><button class="add-to-cart" data-product-id="1" data-product-name="adidas Campus 00s Shoes (Black)">Add to Cart</button></td>
             </tr>
             <tr>
-                <td><img src="C:/Users/strdm/Downloads/ESTRADA/Images/adcampuspink.jpeg" alt="Adidas Pink" width="150" height="150"></td>
+                <td><img src="C:/Users/strdm/Downloads/ESTRADA/Images/pinkadi00s.png" alt="Adidas Pink" width="150" height="150"></td>
                 <td>adidas Campus 00s Shoes (Pink)</td>
-                <td>| Lace closure with adjustable strap, leather upper, rubber outsole |</td>
+                <td>Lace closure with adjustable strap, leather upper, rubber outsole</td>
                 <td>P3,500</td>
                 <td>
-                    <label for="adcampuspink-quantity">Quantity:</label>
-                    <input type="number" id="adcampuspink-quantity" name="adcampuspink-quantity" min="1" value="1">
+                    <label for="quantity-2">Quantity:</label>
+                    <input type="number" id="quantity-2" name="quantity-2" min="1" value="1">
                 </td>
-                <td><button>Add To Cart</button></td>
+                <td><button class="add-to-cart" data-product-id="2" data-product-name="adidas Campus 00s Shoes (Pink)">Add to Cart</button></td>
             </tr>
         </table>
+    </section>
 
-        <hr>
-
-        <h3>We Followed BLACKPINK In Campus 00's | adidas Originals</h3>
+    <article>
+        <h2>We Followed BLACKPINK In Campus 00's | adidas Originals</h2>
         <div class="video-container">
-            <iframe class="responsive-iframe" src="https://www.youtube.com/embed/LqxDswEG3g8?si=dOh15KuyQxxuJZ3A" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/LqxDswEG3g8?si=dOh15KuyQxxuJZ3A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
+    </article>
 
-        <h4>Listen to BLACKPINK's latest song 'Shut Down'</h4>
+    <aside>
+        <h2>BLACKPINK X adidas</h2>
+        <div class="aside-image-container">
+            <img src="C:/Users/strdm/Downloads/ESTRADA/Images/bppinkvenom.png" alt="Pink Venom" class="aside-image" id="redirect-image">
+        </div>
+        <p>Calling all BLINKs: The BLACKPINK adidas collection has arrived. What is it? A collab between adidas Originals and the biggest girl group in the world, the record-breaking South Korean pop sensation BLACKPINK, known for hits like "Pink Venom," "Ddu-Du Ddu-Du" and "Kiss and Make Up." Famous for their polished coordinated fashion statements, Jisoo, Jennie, Rosé and Lisa are lending their stellar style to signature pieces including adidas BLACKPINK shoes. Get excited for the collab and check out the full range of adidas x BLACKPINK gear.</p>
+        <br>
+        <p>Listen to BLACKPINK's latest song 'Shut Down'</p>
         <audio controls autoplay loop>
-            <source src="/Users/mico/Downloads/ESTRADA/Audio/shutdown.mp3">
+            <source src="C:/Users/strdm/Downloads/ESTRADA/Audio/shutdown.mp3">
         </audio>
+    </aside>
 
-        <h5>Contact Form</h5>
-        <form action="/submit_form" method="post">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email">
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" cols="50"></textarea>
-            <input type="submit" value="Submit">
-        </form>
+    <footer>
+        <p>&copy; 2024 Hot Kickz. All rights reserved.</p>
+    </footer>
+
+    <div class="modal" id="myModal">
+        <span class="close" id="close">&times;</span>
+        <img class="modal-content" id="modal-image">
     </div>
-</body>
 
+</body>
 </html>
