@@ -297,7 +297,7 @@ footer {
     margin: 0;
     padding: 0;
     font-family: 'Georgia', serif;
-    background: url('C:/Users/strdm/Downloads/ESTRADA/Images/kazuya.png') no-repeat center center fixed;
+    background: url('Images/kazuya.png') no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;
     display: flex;
