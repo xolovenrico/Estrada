@@ -3,29 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Shopping Cart</title>
+    <title>Your Shopping Cart - Hot Kickz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Danfo&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <link rel="icon" href="C:/Users/strdm/Downloads/ESTRADA/Images/favicon.ico" type="image/x-icon">
 </head>
-<body>
+<body class="body-main">
     <header>
-        <h1>Your Shopping Cart</h1>
+        <div class="index-header">
+            <div class="index-header-logo-and-title">
+                <img src="C:/Users/strdm/Downloads/ESTRADA/Images/shoelogo.png" alt="Logo" class="index-header-logo">
+                <h1 class="index-header-title">Hot Kickz</h1>
+                <br>
+                <p class="index-header-slogan">kick in style.</p>
+                <div class="search-bar">
+                    <form action="#" method="get">
+                        <input type="text" id="search" name="search" placeholder="Any kicks in mind?">
+                        <button type="submit">Search</button>
+                    </form>
+                    <ul id="search-dropdown"></ul>
+                </div>
+            </div>
+        </div>
     </header>
-    <main>
-        <ul id="cart-items">
-            <!-- Items will be dynamically inserted here -->
-        </ul>
-    </main>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-            let cartList = document.getElementById('cart-items');
-
-            cartItems.forEach(item => {
-                let listItem = document.createElement('li');
-                listItem.textContent = `${item.name} - Quantity: ${item.quantity}`;
-                cartList.appendChild(listItem);
-            });
-        });
-    </script>
+    <div class="container">
+        <div class="left-half">
+            <h2>Products in Your Cart</h2>
+            <div id="cart-items"></div>
+            <p id="total-price">Total Price: $0</p>
+            <button id="place-order">Proceed to Checkout</button>
+            <button id="clear-cart">Clear Cart</button>
+        </div>
+        <div class="right-half">
+            <h2>Contact Form</h2>
+            <form id="contact-form" action="/submit_form" method="post">
+                <label for="name">Name:</label> <br>
+                <input type="text" id="name" name="name" required> <br>
+                <label for="email">Email:</label> <br>
+                <input type="email" id="email" name="email" required> <br>
+                <label for="address">Address:</label> <br>
+                <input type="text" id="address" name="address" required> <br>
+                <label for="message">Message:</label> <br>
+                <textarea id="message" name="message" rows="4" cols="50"></textarea> <br>
+                <input type="submit" value="Confirm Order" id="confirm-order">
+            </form>
+        </div>
+    </div>
+    <div class="modal" id="order-summary">
+        <div class="modal-content">
+            <span class="close" id="close">&times;</span>
+            <h2>Order Summary</h2>
+            <ul id="order-summary-list"></ul>
+            <p id="order-total"></p>
+            <p id="user-details"></p>
+        </div>
+    </div>
 </body>
 </html>
